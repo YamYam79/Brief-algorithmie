@@ -13,8 +13,11 @@ public class Exercise05ArraysBasics {
      * @return un tableau [1, 2, 3, ..., n]
      */
     public int[] createSequence(int n) {
-        throw new UnsupportedOperationException();
-
+        int[] tableau = new int[n]; // crée une boite avec le nom "tableau" et contenant un tableau avec des entiers (n cases vides)
+        for (int i = 0; i < n;i++){ // crée un boite avec le nom "i" et contanant le chiffre 0 - test si i < n si oui, va dans la boucle, si non, va à la ligne 20
+            tableau[i] =  i + 1; // affecte à t'indice i de ta boite "tableau" la valeur i + 1
+        }
+        return tableau;
     }
     
     /**
@@ -23,8 +26,7 @@ public class Exercise05ArraysBasics {
      * @return le premier élément
      */
     public int getFirstElement(int[] array) {
-        throw new UnsupportedOperationException();
-
+        return array[0];
     }
     
     /**
@@ -33,8 +35,7 @@ public class Exercise05ArraysBasics {
      * @return le dernier élément
      */
     public int getLastElement(int[] array) {
-        throw new UnsupportedOperationException();
-
+        return array[array.length-1];
     }
     
     /**
@@ -44,8 +45,18 @@ public class Exercise05ArraysBasics {
      * @return le nombre d'occurrences
      */
     public int countOccurrences(int[] array, int value) {
-        throw new UnsupportedOperationException();
-
+        /**
+         * [1, 2, 4, 3, 2]
+         * value = 2
+        */
+       int total = 0;
+        for (int index = 0; index < array.length;index++){
+            int valueFound = array[index];
+            if(value == valueFound){
+                total = total + 1;
+            }
+        }
+       return total;
     }
     
     /**
@@ -55,7 +66,11 @@ public class Exercise05ArraysBasics {
      * @return true si la valeur est présente, false sinon
      */
     public boolean contains(int[] array, int value) {
-        throw new UnsupportedOperationException();
-
+       for (int index = 0; index <array.length; index++) {
+        if (array[index] == value ) {
+            return true;
+        }
+    }
+    return false;
     }
 }
